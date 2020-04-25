@@ -1,0 +1,51 @@
+@import '../../assets/styles/variables';
+
+.signup {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+
+  &-heading {
+    padding: 15px;
+
+    h2 {
+      font-family: $Poppins-SemiBold;
+    }
+  }
+
+  &-form {
+    margin: 20px 15px;
+    padding: 40px 15px;
+    border: 1px solid #eeeeee;
+    border-radius: 7px;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+
+    .form-group .react-tel-input .form-control {
+      width: 100%;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px;
+
+    p {
+      padding: 0 10px 0 0;
+    }
+
+    a {
+      color: $primary_color;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .signup {
+    &-form {
+      width: 92%;
+    }
+  }
+}

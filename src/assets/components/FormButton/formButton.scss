@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+$form_button_hover: #1c8037;
+
+.form-button {
+  width: 100%;
+
+  button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: $primary_color;
+    border-color: $primary_color;
+    border-radius: 9px;
+    font-family: $Poppins-SemiBold;
+    color: #ffffff;
+  }
+
+  button:hover {
+    background-color: $form_button_hover;
+    border-color: $form_button_hover;
+  }
+}

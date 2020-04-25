@@ -1,0 +1,14 @@
+//typography
+@import './typography.scss';
+
+// Override bootstrap default variables
+@import './bootstrap/variables';
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+//local variables
+@import './variables';
+
+//global defaults
+@import './base';

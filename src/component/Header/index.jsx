@@ -1,9 +1,15 @@
 import React from 'react';
 
+import logo from '../../assets/images/covid_logo.png';
+
+import './header.scss';
+
 const Header = () => {
   return (
-    <div>
-      <h1>Covid19 Response App</h1>
+    <div className='header'>
+      <div className="header-logo">
+        <img src={logo} alt="" />
+      </div>
     </div>
   );
 }
