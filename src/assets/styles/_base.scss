@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  padding: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $OpenSans-Bold;
+}
+
+body {
+  background: white;
+  height: 100%;
+  width: 100%;
+  font-family: $OpenSans-Regular;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
