@@ -1,1 +1,0 @@
-# covidng-web
