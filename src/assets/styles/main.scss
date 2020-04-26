@@ -12,3 +12,10 @@
 
 //global defaults
 @import './base';
+
+//components
+@import './components/covid-card';
+@import './components/buttons';
+
+//utilities
+@import './utilities/typography';

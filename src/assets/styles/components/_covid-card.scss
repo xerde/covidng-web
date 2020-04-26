@@ -1,0 +1,11 @@
+.covid-card {
+  border: 1px solid #e7e8ff;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 5px 40px 0px rgba(80, 101, 142, 0.08);
+
+  .covid-card-head {
+    border-bottom: 1px solid #e7e8ff;
+    padding: 1.25rem 1.25rem;
+  }
+}
