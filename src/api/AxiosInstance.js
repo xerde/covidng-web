@@ -1,7 +1,8 @@
-var axios = require('axios');
+// var axios = require('axios');
+import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'url or env variable here',
+  baseURL: 'https://covid-ng.herokuapp.com/',
 });
 
 //we can use an interceptor here to add header on every call

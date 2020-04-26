@@ -19,4 +19,14 @@ $form_button_hover: #1c8037;
     background-color: $form_button_hover;
     border-color: $form_button_hover;
   }
+
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:focus {
+    background-color: $form_button_hover;
+    border-color: $form_button_hover;
+  }
+
+  button:disabled {
+    background-color: $form_button_hover;
+    border-color: $form_button_hover;
+  }
 }
