@@ -1,0 +1,14 @@
+@import '../../assets/styles/variables';
+
+.header {
+  background-color: $primary_color;
+
+  &-logo {
+    width: 140px;
+    margin: 0 auto;
+  }
+
+  &-logo img {
+    width: 100%;
+  }
+}
