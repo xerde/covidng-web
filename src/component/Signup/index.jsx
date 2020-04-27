@@ -53,8 +53,6 @@ const Signup = props => {
       state: region
     };
 
-    console.log(payload);
-
     (async function() {
       const config = { headers: { "Content-Type": "application/json" } };
 
@@ -65,15 +63,13 @@ const Signup = props => {
         
         setSignupError("");
         setLoading(false);
-        
-        console.log(response.data);
 
         toast.success("Account created successfully. Redirecting to login page...");
         setTimeout(() => {
           props.history.push("/login");
         }, 3000);
       } catch (error) {
-        setSignupError("Unable to complete registration at the moment, please try again later");
+        setSignupError(error.response.data.errors[0]);
         setLoading(false);
         return error.response;
       }

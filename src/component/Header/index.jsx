@@ -7,9 +7,11 @@ import './header.scss';
 const Header = () => {
   return (
     <div className='header'>
+     <a href="/">
       <div className="header-logo">
         <img src={logo} alt="" />
       </div>
+     </a>
     </div>
   );
 }
