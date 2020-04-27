@@ -1,0 +1,14 @@
+.hub-container {
+  & p {
+    letter-spacing: 2px;
+    line-height: 25px;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+
+  & li {
+    letter-spacing: 2px;
+    line-height: 40px;
+  }
+}

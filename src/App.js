@@ -8,34 +8,20 @@ import Login from './component/Login';
 import Dashboard from './component/Dashboard';
 
 import './App.css';
+import Hub from './component/Hub';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <BrowserRouter>
-      <Switch>
-        <Route
-           exact
-           path='/'
-           component={Landing}
-        />
-        <Route
-           exact
-           path='/signup'
-           component={Signup}
-        />
-        <Route
-           exact
-           path='/login'
-           component={Login}
-        />
-        <Route
-           exact
-           path='/dashboard'
-           component={Dashboard}
-        />
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/hub" component={Hub} />
+        </Switch>
       </BrowserRouter>
     </div>
   );

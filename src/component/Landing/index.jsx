@@ -16,11 +16,7 @@ const Landing = () => {
           Know your status to help Protect yourself and others from infection.
           Click below to get started
         </p>
-        <NavLink
-          to="/login"
-          className="text-white"
-          style={{ maxWidth: '35rem', width: '85%' }}
-        >
+        <NavLink to="/login" className="text-white btn-mobile">
           <FormButton title="Sign In" />
         </NavLink>
         <div className=" my-4">
