@@ -1,14 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Spinner } from 'react-bootstrap';
 
 import FormButton from '../../assets/components/FormButton';
 import MainNavbar from '../../assets/components/MainNavbar';
 import MobileNavbar from '../../assets/components/MobileNavbar';
 
+import axios from '../../api/AxiosInstance';
+import { covidAPIs } from '../../api';
+
 import './dashboard.scss';
 
 const Dashboard = props => {
+  const [currentUser, setCurrentUser] = useState({});
+  const [loading, setLoading] = useState(false);
+  const token = localStorage.getItem("covid19_token");
+  
+  useEffect(() => {
+    // Redirects to login if user is not logged in
+    !token && props.history.push("/login");
+
+    // Get user details
+    getUser(token);
+  }, [token, props]);
+
+  const getUser = async userToken => {
+    const config = { 
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userToken}`
+      } 
+    };
+
+    setLoading(true);
+
+    try {
+      const response = await axios.get(covidAPIs.user, config);
+      setCurrentUser(response.data);
+
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      
+      if (error.response.status === 401) {
+        localStorage.removeItem("covid19_token");
+        props.history.push("/login");
+      };
+      // return error.response;
+    }    
+  };
+
   const { pathname } = props.location;
-  const currentUser = 'Akin';
+
   return (
     <div className='dashboard'>
       <div className='dashboard-navbar'>
@@ -16,7 +58,9 @@ const Dashboard = props => {
       </div>
       <div className="dashboard-content">
         <div className="dashboard-heading">
-          <h2>Hi {currentUser}</h2>
+          <h2>{loading
+            ? <Spinner size="lg" animation="grow" variant="success" />
+            : `Hi ${currentUser.firstName}`}</h2>
         </div>
         <p>Prevention is better than cure. Let us help you find out what is going on.</p>
         <div className="dashboard-assessment">

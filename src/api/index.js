@@ -1,3 +1,5 @@
 export const covidAPIs = {
-  login: '/covid-web/v1/api/login',
+  login: 'login',
+  signup: 'user',
+  user: 'user'
 };
