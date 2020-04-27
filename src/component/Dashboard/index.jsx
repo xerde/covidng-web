@@ -41,11 +41,14 @@ const Dashboard = props => {
     } catch (error) {
       setLoading(false);
       
-      if (error.response.status === 401) {
-        localStorage.removeItem("covid19_token");
-        props.history.push("/login");
-      };
-      // return error.response;
+      if (error.response) {
+        if (error.response.status === 401) {
+          localStorage.removeItem("covid19_token");
+          return props.history.push("/login");
+        };
+      }
+      
+      return error.response;
     }    
   };
 
