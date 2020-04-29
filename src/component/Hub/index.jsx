@@ -3,7 +3,7 @@ import React from 'react';
 import MainNavbar from '../../assets/components/MainNavbar';
 import MobileNavbar from '../../assets/components/MobileNavbar';
 import FormButton from '../../assets/components/FormButton';
-import doctors from '../../assets/images/doctors.jpg';
+import doctors from '../../assets/images/result.png';
 
 import './Hub.scss';
 
@@ -16,7 +16,7 @@ const Hub = props => {
         <MainNavbar page={pathname} />
       </div>
       <div className="hub-container d-flex flex-column p-3">
-        <div  className="mb-5">
+        <div  className="mb-5 hub-container-image">
           <img src={doctors} alt="doctors" />
         </div>
         <h3 className="mb-3">
@@ -134,7 +134,7 @@ const Hub = props => {
         </p>
 
         <a
-          href="https://covid19.ncdc.gov.ng/"
+          href="http://www.covidng.com/"
           className="text-white btn-mobile"
           target="_blank"
           rel="noopener noreferrer"
