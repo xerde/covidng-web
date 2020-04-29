@@ -17,7 +17,7 @@ const Signup = props => {
   const [phoneNo, setPhoneNo] = useState("");
   const [stateLatitude, setStateLatitude] = useState(0);
   const [stateLogitude, setStateLogitude] = useState(0);
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("Nigeria");
   const [region, setRegion] = useState("");
   const [loading, setLoading] = useState(false);
   const [signupError, setSignupError] = useState("");
@@ -129,6 +129,7 @@ const Signup = props => {
               value={country}
               ref={register}
               onChange={val => setCountry(val)}
+              disabled
             />
           </div>
           <div className="form-group">
