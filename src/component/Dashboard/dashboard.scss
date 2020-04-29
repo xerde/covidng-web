@@ -31,6 +31,17 @@
       flex-direction: row;
     }
 
+    &-row a {
+      max-width: 300px;
+      width: 100%;
+      margin: 0 5px 0 0;
+      color: $primary_color;
+    }
+
+    &-row a:hover {
+      text-decoration: none;
+    }
+
     &-row-col {
       max-width: 300px;
       width: 100%;

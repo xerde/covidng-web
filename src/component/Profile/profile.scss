@@ -1,0 +1,29 @@
+@import '../../assets/styles/variables';
+
+.profile {
+  max-width: 500px;
+  width: 100%;
+  margin: 40px 20px 0;
+  padding: 40px 40px;
+  border: 1px solid #eeeeee;
+  border-radius: 7px;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+
+  h4, h5 {
+    color: $primary_color;
+  }
+
+  button {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: $primary_color;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .profile {
+    width: 90%;
+  }
+}

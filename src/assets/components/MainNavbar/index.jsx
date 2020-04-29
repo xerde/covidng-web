@@ -13,11 +13,11 @@ const MainNavbar = props => {
             <p>Home</p>
           </div>
         </Link>
-        <Link to='/analytics'>
+        {/* <Link to='/analytics'>
           <div className={page === '/analytics' ? "main-navbar-item-active" : "main-navbar-item"}>
             <p>Analytics</p>
           </div>
-        </Link>
+        </Link> */}
         <Link to='/hub'>
           <div className={page === '/hub' ? "main-navbar-item-active" : "main-navbar-item"}>
             <p>Hub</p>

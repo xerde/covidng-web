@@ -1,0 +1,62 @@
+@import '../../assets/styles/variables';
+
+.result-modal {
+  padding: 40px 20px;
+
+  .mild {
+    color: green;
+  }
+
+  .moderate {
+    color: #dede1d;
+  }
+
+  .severe {
+    color: red;
+  }
+
+  .form-button {
+    max-width: 200px;
+  }
+}
+
+.assessment {
+  padding: 40px 80px;
+  &-questions {
+    &-row {
+      display: flex;
+      flex-direction: column;
+    }
+    &-row-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 130px;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    .text-muted {
+      color: #f50000 !important;
+    }
+
+    .form-button {
+      width: 200px;
+      color: #ffffff;
+    }
+  }
+
+  &-disclaimer {
+    margin: 40px 0 0;
+    padding-top: 30px;
+    border-top: 1px solid #eeeeee;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .assessment {
+    padding: 20px;
+  }
+}

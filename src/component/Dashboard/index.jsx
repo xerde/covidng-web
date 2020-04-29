@@ -36,6 +36,7 @@ const Dashboard = props => {
     try {
       const response = await axios.get(covidAPIs.user, config);
       setCurrentUser(response.data);
+      localStorage.setItem("c19assess_id", response.data._id);
 
       setLoading(false);
     } catch (error) {
@@ -44,6 +45,7 @@ const Dashboard = props => {
       if (error.response) {
         if (error.response.status === 401) {
           localStorage.removeItem("covid19_token");
+          localStorage.removeItem("c19assess_id");
           return props.history.push("/login");
         };
       }
@@ -67,22 +69,30 @@ const Dashboard = props => {
         </div>
         <p>Prevention is better than cure. Let us help you find out what is going on.</p>
         <div className="dashboard-assessment">
-          <FormButton title='Start Assessment' />
+          <a href="/assessment">
+            <FormButton title='Start Assessment' />
+          </a>
         </div>
         <div className="dashboard-pages">
           <div className="dashboard-pages-row">
-            <div className="dashboard-pages-row-col">
-              <i className="far fa-chart-bar"></i>
-              <p>Analytics</p>
-            </div>
-            <div className="dashboard-pages-row-col">
-              <i className="fas fa-info"></i>
-              <p>Hub</p>
-            </div>
-            <div className="dashboard-pages-row-col">
-              <i className="fas fa-user"></i>
-              <p>Profile</p>
-            </div>
+            <a href="#">
+              <div className="dashboard-pages-row-col">
+                <i className="far fa-chart-bar"></i>
+                <p>Analytics</p>
+              </div>
+            </a>
+            <a href="/hub">
+              <div className="dashboard-pages-row-col">
+                <i className="fas fa-info"></i>
+                <p>Hub</p>
+              </div>
+            </a>
+            <a href="/profile">
+              <div className="dashboard-pages-row-col">
+                <i className="fas fa-user"></i>
+                <p>Profile</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

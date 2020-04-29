@@ -14,13 +14,13 @@ const MobileNavbar = props => {
           </div>
         </div>
       </Link>
-      <Link to='/analytics'>
+      {/* <Link to='/analytics'>
         <div className="mobile-navbar-item">
           <div className={page === '/analytics' ? "mobile-navbar-item-icon-active" : "mobile-navbar-item-icon"}>
             <i className="far fa-chart-bar"></i>
           </div>
         </div>
-      </Link>
+      </Link> */}
       <Link to='/hub'>
         <div className="mobile-navbar-item">
           <div className={page === '/hub' ? "mobile-navbar-item-icon-active" : "mobile-navbar-item-icon"}>
