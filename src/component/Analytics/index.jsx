@@ -65,7 +65,7 @@ const Analytics = props => {
 
   for (let i = 0; i < uniqueScore.length; i++) {
     const element = uniqueScore[i];
-    mapData.push({name: `Day ${i + 1}`, score: element, pv: 10, amt: 10});
+    mapData.push({name: `Day ${uniqueDays[i]}`, score: element, pv: 10, amt: 10});
   }
 
   const renderLineChart = (
