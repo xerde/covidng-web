@@ -19,39 +19,37 @@ const Profile = props => {
     !token && props.history.push("/login");
 
     // Get user details
-    getUser(token);
-  }, [token, props]);
-
-  const getUser = async userToken => {
-    const config = { 
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${userToken}`
-      } 
-    };
-
-    setLoading(true);
-
-    try {
-      const response = await axios.get(covidAPIs.user, config);
-      setCurrentUser(response.data);
-      localStorage.setItem("c19assess_id", response.data._id);
-
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      
-      if (error.response) {
-        if (error.response.status === 401) {
-          localStorage.removeItem("covid19_token");
-          localStorage.removeItem("c19assess_id");
-          return props.history.push("/login");
-        };
+    (async function() {
+      const config = { 
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        } 
+      };
+  
+      setLoading(true);
+  
+      try {
+        const response = await axios.get(covidAPIs.user, config);
+        setCurrentUser(response.data);
+        localStorage.setItem("c19assess_id", response.data._id);
+  
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        
+        if (error.response) {
+          if (error.response.status === 401) {
+            localStorage.removeItem("covid19_token");
+            localStorage.removeItem("c19assess_id");
+            return props.history.push("/login");
+          };
+        }
+        
+        return error.response;
       }
-      
-      return error.response;
-    }    
-  };
+    })();
+  }, [token, props]);
 
   const { pathname } = props.location;
 
