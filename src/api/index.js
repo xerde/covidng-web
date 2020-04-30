@@ -3,5 +3,6 @@ export const covidAPIs = {
   signup: 'user',
   user: 'user',
   questions: 'user/questions',
-  answer: 'user/answer'
+  answer: 'user/answer',
+  result: 'user/results'
 };

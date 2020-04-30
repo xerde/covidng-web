@@ -20,6 +20,7 @@ const Assessment = props => {
   const [trackerId, setTrackerId] = useState('');
   const [userScore, setUserScore] = useState([]);
   const [show, setShow] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const { register, handleSubmit, errors } = useForm();
 
@@ -107,10 +108,12 @@ const Assessment = props => {
       const res = await axios.post(covidAPIs.answer, { response }, config);
 
       setSubmitting(false);
+      setSubmitError(false);
 
       handleShow();
     } catch (error) {
       setSubmitting(false);
+      setSubmitError(true);
       return error.res;
     }
   };
@@ -218,6 +221,9 @@ const Assessment = props => {
                   <div className="form-button">
                     <Button type="submit">{submitting ? <Spinner animation="border" size="sm" /> : "Submit"}</Button>
                   </div>
+                  <Form.Text>
+                    {submitError && <p>Unable to submit assessment at the moment, please try again later</p>}
+                  </Form.Text>
                 </Form>
                 : (
                     <div className="">

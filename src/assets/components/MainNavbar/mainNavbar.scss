@@ -8,12 +8,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 50%;
+    max-width: 400px;
   }
 
   a {
     font-family: $Poppins-Regular;
     color: $primary_color;
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 
   &-item {
@@ -30,5 +34,9 @@
     &-active p {
       font-family: $Poppins-Bold;
     }
+  }
+
+  &-item:hover {
+    border-bottom: 2px solid $primary_color;
   }
 }

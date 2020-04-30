@@ -8,6 +8,7 @@ import Login from './component/Login';
 import Dashboard from './component/Dashboard';
 import Assessment from './component/Assessment';
 import Profile from './component/Profile';
+import Analytics from './component/Analytics';
 
 import './App.css';
 import Hub from './component/Hub';
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/hub" component={Hub} />
           <Route exact path="/assessment" component={Assessment} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/analytics" component={Analytics} />
         </Switch>
       </BrowserRouter>
     </div>
