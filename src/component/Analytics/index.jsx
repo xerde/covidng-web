@@ -63,7 +63,7 @@ const Analytics = props => {
   const uniqueScore = [...new Set(scores)];
   let mapData = [];
 
-  for (let i = 0; i < uniqueScore.length; i++) {
+  for (let i = uniqueScore.length - 1; i >= 0; i--) {
     const element = uniqueScore[i];
     mapData.push({name: `Day ${uniqueDays[i]}`, score: element, pv: 10, amt: 10});
   }
@@ -92,13 +92,17 @@ const Analytics = props => {
       ) : (
         <div className="analytics">
           {loading ? (
-            <div className="analytics-graph-content">
+            <div className="analytics-graph-group">
+              <div className="graph-skeleton-header"></div>
               <div className="graph-skeleton"></div>
             </div>
           ) : (
             <div className="analytics-graph-content">
-              <div className="analytics-graph-content-line">
-                {renderLineChart}
+              <div className="analytics-graph-group">
+                <h3>Assessment Analytics</h3>
+                <div className="analytics-graph-content-line">
+                  {renderLineChart}
+                </div>
               </div>
               <div className="analytics-graph-legend">
                 <p className="analytics-graph-header">Score Symptom</p>
@@ -110,7 +114,7 @@ const Analytics = props => {
           )}
           <div className="analytics-content">
             <div className="analytics-content-header">
-              <h3>analytics Result</h3>
+              <h3>Assessment Result</h3>
             </div>
             <div className="analytics-content-body">
               {loading ? (
