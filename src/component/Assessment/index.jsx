@@ -14,6 +14,7 @@ const Assessment = props => {
   const [loading, setLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [answers, setAnswers] = useState([]);
+  const [userAnswers, setUserAnswers] = useState([]);
   const [formType, setFormType] = useState([]);
   const [questionId, setQuestionId] = useState([]);
   const [questionScore, setQuestionScore] = useState([]);
@@ -49,10 +50,12 @@ const Assessment = props => {
         
         for (let i = 0; i < response.data[0].length; i++) {
           const anser = response.data[0][i].answer;
+          const userAnser = response.data[0][i].answer;
           const questionType = response.data[0][i].formType;
           const questionId = response.data[0][i]._id;
           const questionScore = response.data[0][i].score;
           setAnswers(arr => [...arr, anser]);
+          setUserAnswers(arr => [...arr, userAnser]);
           setFormType(arr => [...arr, questionType]);
           setQuestionId(arr => [...arr, questionId]);
           setQuestionScore(arr => [...arr, questionScore]);
@@ -69,9 +72,9 @@ const Assessment = props => {
   }, [token, props]);
 
   const handleChange = input => e => {
-    let buff = answers;
+    let buff = userAnswers;
     buff[input] = e.target.value;
-    setAnswers(buff);
+    setUserAnswers(buff);
   };
 
   const onSubmit = async () => {
@@ -82,12 +85,12 @@ const Assessment = props => {
     const response = [];
 
     for (let i = 0; i < answers.length; i++) {
-      buff = answers[i] === "Yes" ? questionScore[i] + buff : 0 + buff;
+      buff = answers[i] === userAnswers[i] ? questionScore[i] + buff : 0 + buff;
 
       response.push({
-        feedback: answers[i],
+        feedback: userAnswers[i],
         questionId: questionId[i],
-        score: answers[i] === "Yes" ? questionScore[i] : 0,
+        score: answers[i] === userAnswers[i] ? questionScore[i] : 0,
         userId,
         trackerId: trackerId[0].trackerId
       });
